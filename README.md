@@ -120,6 +120,6 @@ Built with ❤️ by **[PREETHI S]**
 
 ## 🏷️ Tags
 
-#machinelearning #healthcare-ai #streamlit #colab #ngrok #kidney-disease #parkinsons-disease #liver-disease #scikit-learn #data-science #crossvalidation #modelselection #joblib
+`#machinelearning` `#healthcare-ai` `#streamlit` `#colab` `#ngrok` `#kidney-disease` `#parkinsons-disease` `#liver-disease` `#scikit-learn` `#data-science` `#crossvalidation` `#modelselection` `#joblib`
 
 
