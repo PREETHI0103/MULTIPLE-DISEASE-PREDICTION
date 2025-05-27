@@ -1,96 +1,125 @@
-# **MULTIPLE DISEASE PREDICTION USING MACHINE LEARNING**
+# 🧬 Multi-Disease Prediction Using Machine Learning
 
-## **Project Overview**
+An intelligent ML-powered system to predict **Parkinson’s, Kidney, and Liver diseases** from clinical data. Built to assist early diagnosis and support healthcare professionals with **fast, accurate, and explainable results** via a clean Streamlit interface.
 
-Timely diagnosis and early detection of diseases are crucial for improving treatment outcomes, reducing healthcare costs, and preventing complications. This project focuses on using machine learning (ML) to predict diseases such as **Parkinson's Disease**, **Kidney Disease**, and **Liver Disease** based on clinical data. The goal is to assist healthcare professionals in making data-driven decisions and improve overall patient care.
-
-## **Objective**
-
-This project aims to develop an accurate and efficient machine learning model to predict diseases using clinical datasets. The system will:
-- **Assist in early disease detection.**
-- **Support healthcare professionals** in making informed decisions.
-- **Reduce diagnostic time and costs** by providing quick, data-driven predictions via an interactive interface.
-
-## **Datasets**
-
-1. **Parkinson’s Disease Dataset**
-   - Shape: 195 rows × 24 columns
-   - Predicts Parkinson’s Disease (1: Parkinson’s, 0: No Parkinson’s).
-   - Challenges: Imbalanced dataset, outlier handling, feature importance selection.
-
-2. **Kidney Disease Dataset**
-   - Shape: 400 rows × 26 columns
-   - Predicts Chronic Kidney Disease (1: CKD, 0: Not CKD).
-   - Challenges: Missing values, categorical encoding, class imbalance.
-
-3. **Liver Disease Dataset**
-   - Shape: 583 rows × 11 columns
-   - Predicts liver disease (1: Disease, 2: No Disease).
-   - Challenges: Missing values, duplicates, outliers, class imbalance.
-
-## **Approach**
-
-### **Data Preprocessing**
-- **Data Cleaning**: Missing values were handled using model-based imputation techniques (Random Forest Regressor and Classifier). Categorical columns containing “?” were replaced with `NaN`, followed by encoding.
-- **Outlier Handling**: Outliers in continuous numerical columns were detected using the IQR method and capped.
-- **Feature Engineering**: Irrelevant columns were removed, top features were selected based on importance, and feature scaling (normalization) was applied for consistency.
-- **Data Balancing**: A variety of data balancing techniques were used and compared, including **undersampling** (reducing the majority class) and **oversampling** (increasing the minority class). The most effective strategy was selected based on trial-and-error with different models.
-
-### **Model Building & Evaluation**
-- **Model Testing**: Multiple machine learning models were used to predict the diseases, and their performance was evaluated using various data handling strategies: original data, undersampled data, and oversampled data.
-- **Model Comparison**: Models were compared based on key evaluation metrics such as **Accuracy, F1 Score, Precision, Recall, ROC-AUC**, and **Confusion Matrix**. The best-performing model was selected based on these comparisons.
-- After extensive experimentation with different models and data handling techniques, the optimal model was chosen for deployment.
-
-### **Streamlit Deployment Using ngrok**
-- The final model was deployed via **Streamlit** in Google Colab. Since Colab does not support direct hosting of Streamlit apps, **ngrok** was used to create a secure tunnel and display the app in real-time.
-- Users can select the disease they want to predict (Parkinson’s, Kidney, or Liver Disease) and input patient details (e.g., age, gender, and clinical features).
-- Predictions are made instantly and displayed in a user-friendly format with interactive charts and graphs.
+<p align="center">
+  <img src="https://img.shields.io/badge/Machine%20Learning-✓-brightgreen" />
+  <img src="https://img.shields.io/badge/Streamlit-✓-red" />
+  <img src="https://img.shields.io/badge/Colab%20Demo-Available-blue" />
+</p>
 
 ---
 
-## **Technologies Used**
+## 📌 Features
 
-- **Python**: The primary language used for data analysis and machine learning.
-- **pandas**: For data manipulation and cleaning.
-- **scikit-learn**: For model training, evaluation, and feature scaling.
-- **Streamlit**: For building the interactive web interface.
-- **ngrok**: For tunneling and displaying the Streamlit app hosted in Google Colab.
-- **matplotlib/seaborn**: For visualizations and data insights.
+### 🩺 Disease Selection
+Choose from:
+- Parkinson’s Disease
+- Kidney Disease
+- Liver Disease
 
-## **Steps Followed**
-1. **Data Collection & Exploration**: Collected and cleaned datasets.
-2. **Data Preprocessing**: Addressed missing values, outliers, and class imbalance with multiple techniques (undersampling, oversampling).
-3. **Model Training**: Trained various models and evaluated them using different data strategies.
-4. **Model Comparison & Selection**: Compared models based on key metrics and selected the best-performing one.
-5. **Deployment with ngrok**: Deployed the final model in Google Colab using ngrok to create a tunnel for Streamlit to run the app in real-time.
+### 🧠 Smart Prediction System
+- Input patient parameters
+- Get real-time predictions from ML models
 
-## **Project Features**
-- **Disease Selection**: Users can choose the disease to predict (Parkinson’s, Kidney, or Liver Disease).
-- **Patient Input**: Users can enter clinical data such as age, gender, and other features to get disease predictions.
-- **Real-time Prediction**: Predictions are made instantly, and results are displayed visually through interactive charts.
-- **Model Performance**: Display of key metrics like confusion matrix, ROC curve, and feature importance to evaluate model transparency.
+### 📊 Model Metrics Dashboard
+- Accuracy, F1 Score, Precision, Recall
+- Confusion Matrix
+- ROC-AUC Curve
+- Feature Importance Visuals
 
-
-
-## Future Improvements
-
-1. **Expand Disease Prediction Models**  
-   Adding more diseases to the prediction models will broaden the applicability of the system to help diagnose a wider variety of medical conditions.
-
-2. **User Authentication**  
-   Incorporate user authentication to provide personalized predictions and secure management of patient data, ensuring privacy and compliance with healthcare regulations.
-
-3. **Streamlit Interface Enhancements**  
-   Enhance the Streamlit interface with interactive visualizations and model explanation tools, enabling users to better understand the model’s predictions.
-
-4. **API Integration for Real-Time Data Input**  
-   Integrating APIs for real-time patient data input would make the system more dynamic and responsive to evolving healthcare conditions.
+### 💡 Streamlit Interface
+- Intuitive and user-friendly
+- Hosted via Colab + ngrok (no local setup)
 
 ---
 
-## Conclusion
+## 📁 Dataset Summary
 
-This project showcases the power of machine learning in the healthcare industry for early disease detection and informed decision-making. By experimenting with different models and data preprocessing techniques, we were able to select the best-performing model for disease prediction. Deployed using Google Colab and ngrok, the system offers an accessible interface for healthcare professionals to make timely, data-driven decisions that could improve patient outcomes.
+| Disease       | Samples | Features | Target | Notes                        |
+|---------------|---------|----------|--------|------------------------------|
+| Parkinson’s   | 195     | 24       | 0 / 1  | Voice biometric data         |
+| Kidney        | 400     | 26       | 0 / 1  | Missing values handled       |
+| Liver         | 583     | 11       | 1 / 2  | Addressed class imbalance    |
 
 ---
+
+## 🧹 Data Preprocessing
+
+- 🔍 Imputation for Missing Values
+- 🔁 Categorical Encoding (Label/OneHot)
+- 🧮 Feature Scaling (StandardScaler / MinMaxScaler)
+- ⚖️ Balancing Techniques (SMOTE, RandomOverSampler, UnderSampler)
+- 📈 Outlier Treatment (IQR Capping)
+
+---
+
+## ⚙️ Models Used
+
+Each disease is modeled using the following classifiers:
+
+- ✅ Logistic Regression  
+- ✅ Random Forest  
+- ✅ XGBoost  
+- ✅ Decision Tree  
+- ✅ K-Nearest Neighbors (KNN)  
+- ✅ Support Vector Machine (SVM)  
+- ✅ Naive Bayes
+
+> For each disease:
+> - All models were trained and evaluated using **raw**, **oversampled**, and **undersampled** data.
+> - **Stratified K-Fold Cross Validation** was applied to compare performance across multiple folds.
+> - Based on overall **cross-validated accuracy, F1-score, and generalization**, the **best performing model** was selected.
+> - The selected model was **saved using `joblib`** and **deployed within the Streamlit app** for real-time predictions.
+
+---
+
+## 🖥️ Tech Stack
+
+| Tool             | Purpose                           |
+|------------------|-----------------------------------|
+| Python           | Core language                     |
+| pandas, numpy    | Data manipulation                 |
+| scikit-learn     | ML algorithms and evaluation      |
+| imbalanced-learn | Data balancing (SMOTE, ROS, RUS)  |
+| matplotlib, seaborn | Data visualization             |
+| Streamlit        | Web app interface                 |
+| ngrok            | Public tunneling for Colab app    |
+| joblib           | Model serialization and loading  |
+
+---
+
+## 🎯 Key Highlights
+
+- 🔍 Multi-disease prediction from a single interface
+- ⚖️ Tried multiple **ML models** per disease
+- 🔁 Used **Stratified K-Fold Cross Validation** to ensure robust performance
+- 🏆 Selected the **best model per disease** based on CV metrics
+- 💾 Saved best models using **joblib** for efficient deployment
+- 📊 Robust model evaluation and visualizations
+- 🚀 Live deployed app via Streamlit in Colab
+- 💬 Future-ready architecture for expanding more diseases
+
+---
+
+## 🔮 Future Improvements
+
+- Add **more diseases** (e.g., diabetes, heart disease)
+- **User authentication** & history tracking
+- Add **API integration** for EHR systems
+- Visualize **model explanations (SHAP, LIME)**
+- Export reports to PDF
+
+---
+
+## 🧑‍💻 Author
+
+Built with ❤️ by **[PREETHI S]**
+
+---
+
+## 🏷️ Tags
+
+#machinelearning #healthcare-ai #streamlit #colab #ngrok #kidney-disease #parkinsons-disease #liver-disease #scikit-learn #data-science #crossvalidation #modelselection #joblib
+
 
